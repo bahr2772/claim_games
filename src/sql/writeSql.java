@@ -4,14 +4,21 @@ import java.sql.*;
 public class writeSql {
 
 	
+	   //  Database credentials
+	   static final String SQLUSER = "root";
+	   static final String SQLPASS = "root";
+	   
+	   // JDBC driver name and database URL
+	   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+	   static final String DB_URL = "jdbc:mysql://localhost/claimgames";
+
+	
 	public writeSql(String username, String password, String email){
 	    
 		  try {
 	      // create a mysql database connection
-	      String myDriver = "com.mysql.jdbc.Driver"; 
-	      String myUrl = "jdbc:mysql://localhost/claimgames";
-	      Class.forName(myDriver);
-	      Connection conn = DriverManager.getConnection(myUrl, "root", "root");
+	      Class.forName(JDBC_DRIVER);
+	      Connection conn = DriverManager.getConnection(DB_URL, SQLUSER, SQLPASS);
 	    
 	 
 	      // the mysql insert statement

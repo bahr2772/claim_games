@@ -43,28 +43,28 @@
 					<c:out value="${sessionScope.correctCount}" />
 					<br>
 					<c:if test="${sessionScope.hangman == null}">
-						<img src="./images/mtPole.png" id="hangPic">
+						<img src="./images/hangman/mtPole.png" id="hangPic">
 					</c:if>
 					<c:if test="${sessionScope.hangman =='0'}">
-						<img src="./images/mtPole.png" id="hangPic">
+						<img src="./images/hangman/mtPole.png" id="hangPic">
 					</c:if>
 					<c:if test="${sessionScope.hangman =='1'}">
-						<img src="./images/head.png" id="hangPic">
+						<img src="./images/hangman/head.png" id="hangPic">
 					</c:if>
 					<c:if test="${sessionScope.hangman =='2'}">
-						<img src="./images/body.png" id="hangPic">
+						<img src="./images/hangman/body.png" id="hangPic">
 					</c:if>
 					<c:if test="${sessionScope.hangman =='3'}">
-						<img src="./images/rightArm.png" id="hangPic">
+						<img src="./images/hangman/rightArm.png" id="hangPic">
 					</c:if>
 					<c:if test="${sessionScope.hangman =='4'}">
-						<img src="./images/2Arm.png" id="hangPic">
+						<img src="./images/hangman/2Arm.png" id="hangPic">
 					</c:if>
 					<c:if test="${sessionScope.hangman =='5'}">
-						<img src="./images/1leg.png" id="hangPic">
+						<img src="./images/hangman/1leg.png" id="hangPic">
 					</c:if>
 					<c:if test="${sessionScope.hangman =='6'}">
-						<img src="./images/dead.gif" id="hangPic">
+						<img src="./images/hangman/dead.gif" id="hangPic">
 					</c:if>
 					<br>
 

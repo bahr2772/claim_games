@@ -73,11 +73,24 @@ public class RegisterServlet extends HttpServlet {
 			response.sendRedirect("register.jsp");
 			return;
 
-		// all good, user registered
+			
+		// user name has space
 		case 5:
-			session.setAttribute("user", "registered");
-			response.sendRedirect("login.jsp");
+			session.setAttribute("user", "userFail");
+			response.sendRedirect("register.jsp");
 			return;
+			
+		// email not valid or blank
+		case 6:
+			session.setAttribute("user", "emailFail");
+			response.sendRedirect("register.jsp");
+			return;
+
+			// all good, user registered
+			case 7:
+				session.setAttribute("user", "registered");
+				response.sendRedirect("login.jsp");
+				return;
 			
 		default:
 			session.setAttribute("user", "error");

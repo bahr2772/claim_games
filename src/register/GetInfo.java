@@ -9,6 +9,13 @@ import java.sql.*;
 
 public class GetInfo {
 
+	//  Database credentials
+	static final String SQLUSER = "root";
+	static final String SQLPASS = "root";
+
+	// JDBC driver name and database URL
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+	static final String DB_URL = "jdbc:mysql://localhost/claimgames";
 
 
 	// lost pass get from email or user name
@@ -16,10 +23,8 @@ public class GetInfo {
 
 		try
 		{
-			String myDriver = "com.mysql.jdbc.Driver"; 
-			String myUrl = "jdbc:mysql://localhost/claimgames";
-			Class.forName(myDriver);
-			Connection conn = DriverManager.getConnection(myUrl, "root", "root");
+			Class.forName(JDBC_DRIVER);
+			Connection conn = DriverManager.getConnection(DB_URL, SQLUSER, SQLPASS);
 
 			PreparedStatement st = conn.prepareStatement("SELECT * FROM Users WHERE username = ? or email = ?");
 			st.setString(1, username);
@@ -42,7 +47,7 @@ public class GetInfo {
 
 			}
 		}
-
+		
 		catch (SQLException e) 
 		{
 			System.out.println("SQL Exception: "+ e.toString());
@@ -51,7 +56,7 @@ public class GetInfo {
 		{
 			System.out.println("Class Not Found Exception: "+ cE.toString());
 		}
-		
+
 		return "User not found";
 	}
 
@@ -61,10 +66,8 @@ public class GetInfo {
 
 		try
 		{
-			String myDriver = "com.mysql.jdbc.Driver"; 
-			String myUrl = "jdbc:mysql://localhost/claimgames";
-			Class.forName(myDriver);
-			Connection conn = DriverManager.getConnection(myUrl, "root", "root");
+			Class.forName(JDBC_DRIVER);
+			Connection conn = DriverManager.getConnection(DB_URL, SQLUSER, SQLPASS);
 
 			PreparedStatement st = conn.prepareStatement("SELECT * FROM Users WHERE username = ? and password = ?");
 			st.setString(1, username);
@@ -112,10 +115,8 @@ public class GetInfo {
 
 		try
 		{
-			String myDriver = "com.mysql.jdbc.Driver"; 
-			String myUrl = "jdbc:mysql://localhost/claimgames";
-			Class.forName(myDriver);
-			Connection conn = DriverManager.getConnection(myUrl, "root", "root");
+			Class.forName(JDBC_DRIVER);
+			Connection conn = DriverManager.getConnection(DB_URL, SQLUSER, SQLPASS);
 
 			PreparedStatement st = conn.prepareStatement("SELECT * FROM Users WHERE username = ? ");
 			st.setString(1, username);
@@ -169,15 +170,19 @@ public class GetInfo {
 			System.out.println("passwords not match");
 			return 4;
 			// check passwords match
-		}else {
-			System.out.println("user sent");
-			@SuppressWarnings("unused")
-			writeSql newUser = new writeSql (username, password1, email);
-			System.out.println("User created");
+		}else if(username.contains(" ")){
+			System.out.println("user name has space");
 			return 5;
+		}else if(!email.contains("@")){
+			System.out.println("invaild email");
+			return 6;
+		}else {
 		}
-
-
+		System.out.println("user sent");
+		@SuppressWarnings("unused")
+		writeSql newUser = new writeSql (username, password1, email);
+		System.out.println("User created");
+		return 7;
 	}
 
 

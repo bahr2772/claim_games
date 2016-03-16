@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -24,51 +25,71 @@
 <body>
 <body>
 
-  <%@include file="header.jsp"%> 
-  
-  
-   <div class="regForm">
+	<%@include file="header.jsp"%>
 
 
-    <!-- Put your page content here! -->
- 
-        <form action="RegisterServlet" method="post" id="regText">
-    Name:<br> <input type="text" name="username"  id="regNameIn" required ><br>
-    Email:<br>  <input type="email" name="email" id="regEmailIn"required><br>
-    Password:<br> <input type="password" name="password1" id="regPass1In" required> <br>
-    Re-enter Password:<br> <input type="password" name="password2" id="regPass2In" required>
-        
-<!--         user in Db -->
-      <% if(session.getAttribute("user") == "userInDb") { %>
-	 <div id="fail"> Username Unavailable </div>
-<!-- 	 user to short -->
-	 <% } else if(session.getAttribute("user")  == "userTooSmall") { %>
-	 	<div id="fail"> Username less then 4 Characters </div>
-<!-- 	 	password to short -->
-	  <% } else if(session.getAttribute("user")  == "passTooSmall") { %>
-	 	<div id="fail"> Password less then 2 Characters </div>
-<!-- 	 password didn't match -->
-	 <% } else if(session.getAttribute("user")  == "passfail") { %>
-	 <div id="fail"> Password mismatched or not entered </div> 
-<!-- 	 nothing entered -->
-	 <% } else if(session.getAttribute("user")  == "nothingEntered") { %>
-	 <div id="fail">You didn't enter anything. <br></div> 
-	 <!-- 	 error -->
-	 <% } else if(session.getAttribute("user")  == "error") { %>
-	 <div id="fail">Something went wrong, contact Admin. <br></div> 
-<!-- 	 user registered -->
-	 <% } else if(session.getAttribute("user")  == "registered") { %>
-	 <div id="fail"> User Registered<a href="login.jsp"> Login In </a> </div> <% } %>
-	 <br>
-            <input type="submit" name="submit" value="Sign-up" id="regBtn">
-        </form>
-        
-    </div>
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+	<div class="regForm">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+
+		<!-- Put your page content here! -->
+
+		<form action="RegisterServlet" method="post" id="regText">
+			Username:<br> <input type="text" name="username" id="regNameIn"
+				required><br> Email:<br> <input type="email"
+				name="email" id="regEmailIn" required><br> Password:<br>
+			<input type="password" name="password1" id="regPass1In" required>
+			<br> Re-enter Password:<br> <input type="password"
+				name="password2" id="regPass2In" required>
+
+			<!--         user in Db -->
+			<c:if test="${sessionScope.user == 'userInDb'}">
+				<div id="fail">Username Unavailable</div>
+			</c:if>
+			<!-- 	 user to short -->
+			<c:if test="${sessionScope.user == 'userTooSmall'}">
+				<div id="fail">Username less then 4 Characters</div>
+			</c:if>
+			<!-- 	 	password to short -->
+			<c:if test="${sessionScope.user == 'passTooSmall'}">
+				<div id="fail">Password less then 2 Characters</div>
+			</c:if>
+			<!-- 	 password didn't match -->
+			<c:if test="${sessionScope.user == 'passfail'}">
+			<div id="fail">Password mismatched or not entered</div></c:if>
+			<!-- 	 nothing entered -->
+			<c:if test="${sessionScope.user == 'nothingEntered'}">
+			<div id="fail">
+				You didn't enter anything. <br>
+			</div></c:if>
+			<!-- 	 error -->
+			<c:if test="${sessionScope.user == 'error'}">
+			<div id="fail">
+				Something went wrong, contact Admin. <br>
+			</div></c:if>
+			<!-- 	 user registered -->
+			<c:if test="${sessionScope.user == 'registered'}">
+			<div id="fail">
+				User Registered<a href="login.jsp"> Login In </a>
+			</div></c:if>
+	<c:if test="${sessionScope.user == 'emailFail'}">
+			<div id="fail">
+				Invalid Email 
+			</div></c:if>
+	<c:if test="${sessionScope.user == 'userFail'}">
+			<div id="fail">
+				User may not contain spaces, commas, quotes, or slashes. 
+			</div></c:if>
+
+			<br> <input type="submit" name="submit" value="Sign-up"
+				id="regBtn">
+		</form>
+
+	</div>
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
 
 </body>
 </body>
