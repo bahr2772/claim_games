@@ -29,8 +29,11 @@
 
 
 	<div class="regForm">
+<c:if test="${sessionScope.username != null}">
+<% response.sendRedirect("index.jsp"); %>
+</c:if>
 
-
+<c:if test="${sessionScope.username == null || sessionScope.username ==''}">
 		<!-- Put your page content here! -->
 
 		<form action="RegisterServlet" method="post" id="regText">
@@ -51,40 +54,52 @@
 			</c:if>
 			<!-- 	 	password to short -->
 			<c:if test="${sessionScope.user == 'passTooSmall'}">
-				<div id="fail">Password less then 2 Characters</div>
+				<div id="fail">Password less then 2 Characters or contains
+					invalid characters</div>
 			</c:if>
 			<!-- 	 password didn't match -->
 			<c:if test="${sessionScope.user == 'passfail'}">
-			<div id="fail">Password mismatched or not entered</div></c:if>
+				<div id="fail">Password mismatched or not entered</div>
+			</c:if>
 			<!-- 	 nothing entered -->
 			<c:if test="${sessionScope.user == 'nothingEntered'}">
-			<div id="fail">
-				You didn't enter anything. <br>
-			</div></c:if>
+				<div id="fail">
+					You didn't enter anything. <br>
+				</div>
+			</c:if>
 			<!-- 	 error -->
 			<c:if test="${sessionScope.user == 'error'}">
-			<div id="fail">
-				Something went wrong, contact Admin. <br>
-			</div></c:if>
+				<div id="fail">
+					Something went wrong, contact Admin. <br>
+				</div>
+			</c:if>
 			<!-- 	 user registered -->
 			<c:if test="${sessionScope.user == 'registered'}">
-			<div id="fail">
-				User Registered<a href="login.jsp"> Login In </a>
-			</div></c:if>
-	<c:if test="${sessionScope.user == 'emailFail'}">
-			<div id="fail">
-				Invalid Email 
-			</div></c:if>
-	<c:if test="${sessionScope.user == 'userFail'}">
-			<div id="fail">
-				User may not contain spaces, commas, quotes, or slashes. 
-			</div></c:if>
-
+				<div id="fail">
+					User Registered<a href="login.jsp"> Login In </a>
+				</div>
+			</c:if>
+			<!-- 			email invalid -->
+			<c:if test="${sessionScope.user == 'emailFail'}">
+				<div id="fail">Invalid Email</div>
+			</c:if>
+			<!-- 			user name fail -->
+			<c:if test="${sessionScope.user == 'userFail'}">
+				<div id="fail">User may not contain spaces, commas, quotes, or
+					slashes.</div>
+			</c:if>
+			<!-- 			fill blank space -->
+			<c:if test="${sessionScope.user == null || sessionScope.user == ''}">
+				<div id="fail">
+					<br>
+				</div>
+			</c:if>
 			<br> <input type="submit" name="submit" value="Sign-up"
 				id="regBtn">
 		</form>
-
+		</c:if>
 	</div>
+	
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
 

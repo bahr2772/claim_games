@@ -161,16 +161,20 @@ public class GetInfo {
 		if(username.length() < 4 ){
 			System.out.println("username to small");
 			return 2;
-			//password to short
-		}else if(password1.length() < 2){
-			System.out.println("password too short");
+			//password to short or contains invalid chars
+		}else if((password1.length() < 2) || password1.contains(" ") || password1.contains(",") || password1.contains("'") || password1.contains("\\")||
+				password1.contains("/") || password1.contains(";") || password1.contains(":") || password1.contains("}") ||
+				password1.contains("{") || password1.contains("(") || password1.contains(")") || password1.contains(".") || password1.contains("\"")){
+			System.out.println("password to short or contains invalid chars");
 			return 3;
 			// passwords mismatch
 		}else if(!password1.equals(password2)){
 			System.out.println("passwords not match");
 			return 4;
 			// check passwords match
-		}else if(username.contains(" ")){
+		}else if(username.contains(" ") || username.contains(",") || username.contains("'") || username.contains("\\")||
+				 username.contains("/") || username.contains(";") || username.contains(":") || username.contains("}") ||
+			  	 username.contains("{") || username.contains("(") || username.contains(")") || username.contains(".") || username.contains("\"")){
 			System.out.println("user name has space");
 			return 5;
 		}else if(!email.contains("@")){

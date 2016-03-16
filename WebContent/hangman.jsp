@@ -20,11 +20,15 @@
 
 
 
-	<c:if test="${sessionScope.game =='0' || sessionScope.game == null}">
+	<c:if test="${sessionScope.game =='0' || sessionScope.game == null }">
 		<%@include file="hangmanstart.jsp"%>
+	</c:if>
+	<c:if test="${sessionScope.HangGame == null }">
+	<% response.sendRedirect("hangmanstart.jsp");%>
 	</c:if>
 
 	<c:if test="${sessionScope.game =='1'}">
+	
 		<div class=Hangcontainer>
 			<c:if
 				test="${sessionScope.username == null || sessionScope.username == ''}">
@@ -72,8 +76,7 @@
 						<div class=contentFoot>
 							Word:
 							<c:out value="${sessionScope.letterList}" />
-							<br>
-							<br>
+							<br> <br>
 							<form action="HangmanServlet" method="POST">
 								<input type=text name="guess" placeholder="Enter Guess"
 									maxlength="1" REQUIRED>
@@ -92,6 +95,9 @@
 						<br>
 					</c:if>
 
+					<c:if test="${sessionScope.guess =='nothingEntered'}">
+						Please enter a guess.
+					</c:if>
 
 					<c:if test="${sessionScope.quit =='3'}">
 				GAME OVER.<br>
@@ -113,10 +119,9 @@
 					</c:if>
 					<br>
 				</div>
-				</c:if>
+			</c:if>
 		</div>
-
-	</c:if>
+</c:if>
 
 
 	<!-- jQuery -->

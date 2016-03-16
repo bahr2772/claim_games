@@ -66,6 +66,8 @@ public class HangmanStartServlet extends HttpServlet {
 		request.getSession().setAttribute("quit", 1);
 		request.getSession().setAttribute("game", 1);
 		response.sendRedirect("hangman.jsp");
+		request.getSession().setAttribute("HangGame", "playing");
+
 		
 	}
 

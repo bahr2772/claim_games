@@ -49,6 +49,14 @@ public class HangmanModel {
 		Collections.shuffle(wordList);				
 	}*/
 
+	public int validateGuess(String guess){
+		if(guess.length() <= 0 || guess == null || guess == ""){
+			return 1;
+		}else
+			setGuess(guess.charAt(0));
+		return 2;
+	}
+	
 
 	/// ***********  Getters and Setters  **********************
 	public ArrayList<Character> getGuessList() {

@@ -35,6 +35,17 @@ public class HangmanServlet extends HttpServlet {
 		
 		String guess = request.getParameter("guess").toUpperCase();
 		
+		if(model.getWordPlay() == null){
+			
+		}
+		
+		if(guess == ""){
+			request.getSession().setAttribute("guess", "nothingEntered");
+			request.getSession().setAttribute("HangGame", "playing");
+			response.sendRedirect("hangman.jsp");
+			return;
+		}
+		
 		model.setGuess(guess.charAt(0));
 		model.getGuessList().add(guess.charAt(0));
 		
@@ -55,12 +66,14 @@ public class HangmanServlet extends HttpServlet {
 		if(model.getGameCounter() == 6){
 			request.getSession().setAttribute("quit", 3);
 		}
-		
+		request.getSession().setAttribute("HangGame", "playing");
 		request.getSession().setAttribute("hangman", model.getGameCounter());
 		request.getSession().setAttribute("guessList", model.getGuessList());
 		request.getSession().setAttribute("letterList", model.getLetterList());
 		request.getSession().setAttribute("correctCount", model.getCorrectCount());
-		
+		request.getSession().setAttribute("guess", "");
+		request.getSession().setAttribute("game", 1);
+
 		
 	
 		response.sendRedirect("hangman.jsp");
