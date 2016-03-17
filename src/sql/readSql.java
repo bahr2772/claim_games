@@ -9,8 +9,8 @@ public class readSql {
    static final String DB_URL = "jdbc:mysql://localhost/claimgames";
 
    //  Database credentials
-   static final String SQLUSER = "root";
-   static final String SQLPASS = "Pa$$word";
+   static final String SQLUSER = "claimgames";
+   static final String SQLPASS = "claimgames";
    
    
    

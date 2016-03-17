@@ -10,8 +10,8 @@ import java.sql.*;
 public class GetInfo {
 
 	//  Database credentials
-	static final String SQLUSER = "root";
-	static final String SQLPASS = "Pa$$word";
+	static final String SQLUSER = "claimgames";
+	static final String SQLPASS = "claimgames";
 
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  

@@ -28,6 +28,8 @@
 
 <form action="shipSetting" method="post">
 <div id="bsSetShipsTable">	
+	<%@include file="header.jsp"%>
+
 
 <TABLE id="page" border="0" cellspacing="0" cellpadding="0">
 <c:forEach begin="0" end="10" var="row">
