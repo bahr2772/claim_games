@@ -33,7 +33,7 @@ public class StartBattleshipServlet extends HttpServlet {
 		BsGame game = new BsGame(turn);
 		//the ib makes the String array for later use in business logic
 		InitializeBattleship ib = new InitializeBattleship(game,turn);
-		request.getSession().setAttribute("gameBean", game);
+		request.getSession().setAttribute("battleshipBean", game);
 		response.sendRedirect("SetShips.jsp");
 	}
 

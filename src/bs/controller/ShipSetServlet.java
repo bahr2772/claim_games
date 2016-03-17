@@ -31,20 +31,20 @@ public class ShipSetServlet extends HttpServlet {
 		String placementRow = request.getParameter("row");
 		String placementColumn = request.getParameter("column");
 		String placementOrientation = request.getParameter("orientation");
-		BsGame gameBean = (BsGame)request.getSession().getAttribute("gameBean");
-		ValidateShip vs = new ValidateShip(gameBean, placementRow, placementColumn, placementOrientation);
+		BsGame battleshipBean = (BsGame)request.getSession().getAttribute("battleshipBean");
+		ValidateShip vs = new ValidateShip(battleshipBean, placementRow, placementColumn, placementOrientation);
 		//by checking for a user ship, the ValidateShip object creates invisible string arrays and tries to place a ship
 		if(vs.stillMoreUserShips()){
 			vs.tryToSetShipOnUserBoard();
 		}
-		if(gameBean.getUser().getDefBoard().getShipsOnBoard()<5){
+		if(battleshipBean.getUser().getDefBoard().getShipsOnBoard()<5){
 			//send all current ship positions to the jsp to display
-			request.getSession().setAttribute("gameBean", gameBean);
+			request.getSession().setAttribute("battleshipBean", battleshipBean);
 			request.getRequestDispatcher("SetShips.jsp").forward(request, response);
 		}
 		
-		if(gameBean.getUser().getDefBoard().getShipsOnBoard()==5){
-			request.getSession().setAttribute("gameBean", gameBean);
+		if(battleshipBean.getUser().getDefBoard().getShipsOnBoard()==5){
+			request.getSession().setAttribute("battleshipBean", battleshipBean);
 			request.getRequestDispatcher("DisplayBattleship.jsp").forward(request, response);
 		}
 		

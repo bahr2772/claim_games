@@ -30,15 +30,15 @@ public class FireMissileServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String clickedRow = request.getParameter("clickedRow");
 		String clickedColumn = request.getParameter("clickedColumn");
-		BsGame gameBean = (BsGame)request.getSession().getAttribute("gameBean");
-		MissileHandler mh = new MissileHandler(clickedRow, clickedColumn, gameBean);
+		BsGame battleshipBean = (BsGame)request.getSession().getAttribute("battleshipBean");
+		MissileHandler mh = new MissileHandler(clickedRow, clickedColumn, battleshipBean);
 		//either the user or computer fires a missile
 		mh.fireSomeMissile();
-		if(!gameBean.getGameStatus()){
-			request.getSession().setAttribute("gameBean", gameBean);
+		if(!battleshipBean.getGameStatus()){
+			request.getSession().setAttribute("battleshipBean", battleshipBean);
 			request.getRequestDispatcher("DisplayBattleship.jsp").forward(request, response);
 		}else{
-			request.getSession().setAttribute("gameBean", gameBean);
+			request.getSession().setAttribute("battleshipBean", battleshipBean);
 			request.getRequestDispatcher("BattleshipGameOver.jsp").forward(request, response);
 		}
 	}

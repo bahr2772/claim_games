@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 
-<jsp:useBean id="gameBean" type="bsmodel.BsGame" scope="session"/>
+<jsp:useBean id="battleshipBean" type="bsmodel.BsGame" scope="session"/>
 
 <html>
 <head>
@@ -13,15 +13,15 @@
 </head>
 <body id="bsSetShipsBody">
 <div id="bsSetShipsTitle">
-<h1>You have placed <c:out value="${gameBean.getUser().getDefBoard().getShipsOnBoard() }"/> of your 5 ships</h1>
+<h1>You have placed <c:out value="${battleshipBean.getUser().getDefBoard().getShipsOnBoard() }"/> of your 5 ships</h1>
 </div>
 <div id="bsSetShipsInstructions">
 <h3> Select the row and column where your ship will begin</h3>
 
 	<!-- Display warnings if ship failed to be placed -->
 	<c:choose>
-		<c:when test="${gameBean.getUser().getDefBoard().isOffOfBoard()}"><h4 style="color:red;">Your ship won't fit on the board!</h4></c:when>
-		<c:when test="${gameBean.getUser().getDefBoard().isOverlap()}"><h4 style="color:red;">Your ship would overlap with another ship!</h4></c:when>
+		<c:when test="${battleshipBean.getUser().getDefBoard().isOffOfBoard()}"><h4 style="color:red;">Your ship won't fit on the board!</h4></c:when>
+		<c:when test="${battleshipBean.getUser().getDefBoard().isOverlap()}"><h4 style="color:red;">Your ship would overlap with another ship!</h4></c:when>
 	</c:choose>
 </div>
 	 <!-- posting to ShipSetServlet -->
@@ -60,13 +60,13 @@
 			 	<c:when test="${column==9 && row==0}">09 <input type="radio" name="column" value="9"></c:when>
 			 	<c:when test="${column==10 && row==0}">10<input type="radio" name="column" value="10"></c:when>
 			 	
-		        <c:when test="${gameBean.getUser().getJSPInfoSpace(row, column) == 20}"><img src="BsImages/water.jpg" alt="water" width="30" height="30"></c:when>
-		        <c:when test="${gameBean.getUser().getJSPInfoSpace(row, column) == 21}"><img src="BsImages/shipEndTop.jpg" alt="N" width="30" height="30"></c:when>
-		        <c:when test="${gameBean.getUser().getJSPInfoSpace(row, column) == 22}"><img src="BsImages/shipEndRight.jpg" alt="E" width="30" height="30"></c:when>
-		        <c:when test="${gameBean.getUser().getJSPInfoSpace(row, column) == 23}"><img src="BsImages/shipEndBottom.jpg" alt="S" width="30" height="30"></c:when>
-		        <c:when test="${gameBean.getUser().getJSPInfoSpace(row, column) == 24}"><img src="BsImages/shipEndLeft.jpg" alt="W" width="30" height="30"></c:when>
-		        <c:when test="${gameBean.getUser().getJSPInfoSpace(row, column) == 25}"><img src="BsImages/shipCenterVert.jpg" alt="V" width="30" height="30"></c:when>
-		        <c:when test="${gameBean.getUser().getJSPInfoSpace(row, column) == 26}"><img src="BsImages/shipCenterHoriz.jpg" alt="H" width="30" height="30"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 20}"><img src="BsImages/water.jpg" alt="water" width="30" height="30"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 21}"><img src="BsImages/shipEndTop.jpg" alt="N" width="30" height="30"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 22}"><img src="BsImages/shipEndRight.jpg" alt="E" width="30" height="30"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 23}"><img src="BsImages/shipEndBottom.jpg" alt="S" width="30" height="30"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 24}"><img src="BsImages/shipEndLeft.jpg" alt="W" width="30" height="30"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 25}"><img src="BsImages/shipCenterVert.jpg" alt="V" width="30" height="30"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 26}"><img src="BsImages/shipCenterHoriz.jpg" alt="H" width="30" height="30"></c:when>
        		</c:choose>
 		</td>
 	</c:forEach>

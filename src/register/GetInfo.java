@@ -11,7 +11,7 @@ public class GetInfo {
 
 	//  Database credentials
 	static final String SQLUSER = "root";
-	static final String SQLPASS = "root";
+	static final String SQLPASS = "Pa$$word";
 
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  

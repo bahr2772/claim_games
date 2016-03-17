@@ -10,7 +10,7 @@ public class readSql {
 
    //  Database credentials
    static final String SQLUSER = "root";
-   static final String SQLPASS = "root";
+   static final String SQLPASS = "Pa$$word";
    
    
    
