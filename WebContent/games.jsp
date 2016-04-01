@@ -20,9 +20,9 @@
 		<div class=gamesContainer>
 		<table id="gamesTable">
 <tr>
-<td><a href="c4start.jsp"> <img src="http://www.johnthurlow.com/children/fun/connect-4.jpg" width=150px> </a></td>
-<td><a href="hangman.jsp"> <img src="https://lh3.ggpht.com/sXBObZWkes9iWGfeXiHT3k_N6gdDQ6T5vIbwtoMDTy6wJCMeX-N9rrmgATCtkYjQr6_R=w300" width="150px"> </a></td>
-<td><a href="StartingPoint.jsp"> <img src="./images/siteImages/blackjack-logo-300x300.png" width="150px"> </a></td>
+<td><a href="c4start.jsp"> <img src="./images/siteImages/connect-4.jpg" width=150px> </a></td>
+<td><a href="hangman.jsp"> <img src="./images/siteImages/hangmanicon.png" width="150px"> </a></td>
+<td><a href="BJStartingPoint.jsp"> <img src="./images/siteImages/blackjack-logo-300x300.png" width="150px"> </a></td>
 <td><a href="WelcomeToBattleship.jsp"> <img src="./images/siteImages/battleship_icon.png" width="150px"> </a></td>
 </tr>
 <tr>

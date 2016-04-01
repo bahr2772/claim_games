@@ -7,9 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Game Over</title>
-<link rel="stylesheet" href="BattleshipStyle.css"/>
+<link rel="stylesheet" href="css/BattleshipStyle.css"/>
 </head>
 <body id="bsGameOverBody">
+<%@include file="header.jsp"%>
 <!-- I copied the tables from DisplayBattleship.jsp
 If you make changes to those tables, you might need to change these as well -->
 <c:choose>
@@ -18,15 +19,15 @@ If you make changes to those tables, you might need to change these as well -->
 	<div id="bsEndStatement">
 		<h1>The computer beat you</h1>
 	</div>
-		<TABLE id="bsYourBoardTable">
+		<TABLE id="bsGameOver">
 <c:forEach begin="0" end="10" var="row">
 	<tr>
 	<c:forEach begin="0" end="10" var="column">
 		<td id="bsYourBoardColumn">
 			 <c:choose>
-		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 20}"><img src="BsImages/water.jpg" alt="water" id="bsYourBoard"></c:when>
-       			<c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 51}"><img src="BsImages/hit.png" alt="!" id="bsYourBoard"></c:when>
-		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 52}"><img src="BsImages/miss.jpg" alt="O" id="bsYourBoard"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 20}"><img src="images/BsImages/water.jpg" alt="water" id="bsYourBoard"></c:when>
+       			<c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 51}"><img src="images/BsImages/hit.png" alt="!" id="bsYourBoard"></c:when>
+		        <c:when test="${battleshipBean.getUser().getJSPInfoSpace(row, column) == 52}"><img src="images/BsImages/miss.jpg" alt="O" id="bsYourBoard"></c:when>
        		</c:choose>
 		</td>
 	</c:forEach>
@@ -38,20 +39,20 @@ If you make changes to those tables, you might need to change these as well -->
 	<div id="bsEndStatement">
 		<h1>You win!</h1>
 	</div>
-		<TABLE id="bsNotYourTurn">
+		<TABLE id="bsGameOver">
 		<c:forEach begin="0" end="10" var="row">
 			<tr id="bsNotYourTurnRow">
 			<c:forEach begin="0" end="10" var="column">
 				<td>
 					<c:choose>
 						<c:when test="${battleshipBean.getCPU().getJSPInfoSpace(row, column) == 50 }">
-							<img src="BsImages/blue.png" alt="h" id="bsImageNotYourTurn">
+							<img src="images/BsImages/blue.png" alt="h" id="bsYourBoard">
 						</c:when>
 						<c:when test="${battleshipBean.getCPU().getJSPInfoSpace(row, column) == 51 }">
-							<img src="BsImages/hit.png" alt="h" id="bsImageNotYourTurn">
+							<img src="images/BsImages/hit.png" alt="h" id="bsYourBoard">
 						</c:when>
 						<c:when test="${battleshipBean.getCPU().getJSPInfoSpace(row, column) == 52 }">
-							<img src="BsImages/miss.jpg" alt="m" id="bsImageNotYourTurn">
+							<img src="images/BsImages/miss.jpg" alt="m" id="bsYourBoard">
 						</c:when>
 					</c:choose>
 				</td>

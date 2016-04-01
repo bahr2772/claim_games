@@ -53,7 +53,7 @@
 
 						<p>Please log in:</p>
 						<button type="submit" class="logBtn" id="submit">Login</button>
-						<br> <a href="register.jsp" id="reg">Register Here</a>
+						<br><br> <a href="register.jsp" id="reg">Register Here</a>
 						<div id="fail">
 							<a href="getpassword.jsp">Forgot password?</a>
 						</div>

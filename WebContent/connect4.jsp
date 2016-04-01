@@ -1,24 +1,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page session="true" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <jsp:useBean id="c4GameBean" class="c4model.C4Game" scope="session"/>
  
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="css/connect4.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/connect4.css" rel="stylesheet" >
 <title>Connect 4</title>
 
 
+<c:if test="${username==null || username==''}">
+	<script type="text/javascript">
+		window.location = "index.jsp"
+	</script>
+</c:if>
 <c:if test="${c4Active==null}">
-<script type="text/javascript">
-window.location = "c4start.jsp"
-</script>
+	<script type="text/javascript">
+		window.location = "c4start.jsp"
+	</script>
 </c:if>
 
-
-<c:if test="${!c4GameBean.isHumansTurn() && !c4GameBean.isGameOver()}">
-	<script type="text/javascript">
+<script type="text/javascript">
 	function initialize() {
         setTimeout('submitForm()', 750);
     }
@@ -26,12 +30,13 @@ window.location = "c4start.jsp"
         document.forms["c4form"].submit();
     }
 </script>
-</c:if>
+
 
 
 </head>
 
-<body onload="initialize()" 
+<body 
+<c:if test="${!c4GameBean.isHumansTurn() && !c4GameBean.isGameOver()}">onload="initialize()" </c:if>
 	<c:choose>
 		<c:when test="${sessionScope.c4background=='1'}">
 			id="c4body1"
@@ -45,6 +50,10 @@ window.location = "c4start.jsp"
 	</c:choose>
 
 >
+
+<%@include file="header.jsp"%>
+
+<div id="c4maindiv">
 <FORM name="c4form" method="post" action="C4ServletController">
 <TABLE id="connect4Outer">
 <TR><TD colspan="7">
@@ -122,5 +131,6 @@ window.location = "c4start.jsp"
 </TR>
 </TABLE>
 </FORM>
+</div>
 </body>
 </html>

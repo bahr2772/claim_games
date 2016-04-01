@@ -1,0 +1,285 @@
+#bsWelcome {
+	background-image: url("../images/BsImages/ussbattleship.jpg");
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	backgroud-size: cover;
+}
+
+#bsWelcomeTitle {
+	margin-top: 100px; color : #3c2d9c;
+	font-size: 65px;
+	margin-left: 9%;
+	font-family: sans-serif;
+	color: #3c2d9c;
+}
+
+#startpage {
+	padding: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	height: 200px;
+	width: 200px;
+	background-color: rgba(250, 150, 150, .7);
+	
+}
+
+#bsWelcomeOptions {
+	color: green;
+	margin-top: 4%;
+	margin-left: 60%;
+	font-family: "Times New Roman", Times, serif;
+}
+
+#bsWelcomeSubmit {
+	margin-left: 40%;
+	margin-bottom: 5%;
+}
+#bsSetShipsPage{
+	margin-top:10px;
+/* 	margin-left:3%; */
+}
+#bsSetShipsBody {
+	background-image: url("../images/BsImages/bsShipyard.jpg");
+	background-repeat: no-repeat;
+	height: 80%;
+	width: 100%;
+	backgroud-size: cover;
+}
+
+#bsSetShipsTitle {
+	color: #1d6841;
+	margin-left:50px;
+	background-color: yellow;
+	width: 475px;
+	margin-top:20px;
+	padding-left:30px;
+}
+
+
+#bsSetShipsInstructions {
+	margin-left: 60px;
+	padding-left:10px;
+	color: #020a00;
+	background-color:#b3bab9;
+	width:440px;
+}
+
+#bsSetShipsTable {
+	color: #2f337f;
+	background-color: #5b8a85;
+	background-size: 100px 100px;
+	padding: 0px 0px 0px 0px;
+	margin-top: 20px;
+	margin-left: 80px;
+	width: 332px;
+}
+
+#bsShipSetCell {
+	color: #242565;
+	text-align: right;
+	line-height:0;
+}
+
+
+#bsSetShipsOrientation {
+	color: #52251e;
+	background-color: #6ba65f;
+	padding: 5px 5px 5px 5px;
+	margin-left: 500px;
+	margin-top: -220px;
+	width: 200px;
+}
+
+td {
+	width: 30px;
+	height: 30px;
+}
+
+#bsUserData {
+	margin-left: 50px;
+	margin-top: 10px;
+	font-size: 1.3em;
+	width: 300px;
+	height: 75px;
+	color: #b8b5ff;
+}
+
+#bsComputerData {
+	font-size: 1.3em;
+	width: 300px;
+	height: 75px;
+	margin-left: 550px;
+	margin-top: -75px;
+	color: #ffa11a;
+}
+
+#bsKeyGuideHit {
+	margin-left: 0px;
+	margin-top: 50px;
+	color: #48960b;
+}
+
+#bsKeyGuideMiss {
+	margin-left: 150px;
+	margin-top: -64px;
+	color: #48960b;
+}
+
+#bsKeyImage {
+	width: 27px;
+	height: 27px;
+}
+
+#bsPrepare {
+	color: #b8a40c;
+	background-color: #89f9fb;
+	width: 320px;
+	padding-left: 15px;
+	margin-left:20px;
+}
+
+#bsPleaseClick {
+	color: #ad0b3b;
+	background-color: #878787;
+	width: 350px;
+	padding-left: 5px;
+	margin-left:20px;
+}
+
+#bsYourTurn {
+	background-color: #0057ff;
+/* 	padding-bottom:30px; */
+	margin-left:30px;
+	border-collapse:collapse;
+}
+
+#bsYourTurnRow {
+	
+}
+
+#bsNotYourTurn {
+	margin-bottom: 10px;
+	margin-left: 30px;
+	background-color: #0057ff;	
+	border-collapse:collapse;
+}
+
+#bsButtonYourTurn {
+	margin-right:15px;
+	margin-left:-15px;
+	margin-top:-15px;
+	margin-bottom:-1px;
+	width: 30px;
+	height: 30px;
+}
+
+#bsImageYourTurn {
+	width: 27px;
+	height: 27px;
+	margin-right:13px;
+	margin-left:-13px;
+	margin-top:-13px;
+	margin-bottom:15px;
+}
+#bsImageNotYourTurnWater{
+	width: 30px;
+	height: 30px;
+	margin-right:15px;
+	margin-left:-15px;
+	margin-top:-15px;
+	margin-bottom:15px;
+}
+
+/*  The table of the offense board when getting computer shot*/
+#bsImageNotYourTurn {
+	width: 27px;
+	height: 27px;
+	margin-right:15px;
+	margin-left:-13px;
+	margin-top:-14px;
+	margin-bottom:15px;
+}
+/*  The table of the defense board */
+#bsYourBoardTable {
+	border-spacing: 0px;
+	float: left;
+	background-color: #0088c5;
+	padding: 50px 50px 50px 50px;
+	margin-left: 550px;
+	margin-top:-340px;
+ 	border-collapse:collapse; 
+}
+#bsYourBoardTableComputerShoots{
+	border-spacing: 0px;
+/* 	float: left; */
+	background-color: #0088c5;
+	padding: 50px 50px 50px 50px;
+	margin-left: 550px;
+	margin-top:-350px;
+ 	border-collapse:collapse; 
+}
+
+#bsYourBoardColumn {
+	padding: 0px;
+}
+/*  The images of the defense board */
+#bsYourBoard {
+	width: 30px;
+	height: 30px;
+	margin-right:8px;
+	margin-left:-18px;
+	margin-top:-18px;
+	margin-bottom:15px;
+	
+}
+
+#bsCpuSubmit {
+	margin-top: 500px;
+	visibility:hidden;
+}
+
+#bsFiringBody {
+	background-image: url("../images/BsImages/bsLaunchMissile.jpg");
+	background-repeat: no-repeat;
+	width:100%;
+	height:80%;
+	background-size: cover;
+}
+
+#bsEndStatement {
+	color: white;
+	margin-left: 70px;
+	margin-top:100px;
+}
+
+#playBsAgain {
+	margin-left: 500px;
+	margin-top: -180px;
+	background-color: yellow;
+	padding: 10px 10px 10px 10px;
+	width: 90px;
+}
+
+#quitBs {
+	margin-left: 500px;
+	margin-top: -120px;
+	background-color: orange;
+	padding: 10px 10px 10px 10px;
+	width: 90px;
+}
+#bsGameOver{
+	margin-top:30px;
+	margin-left:50px;
+	background-color:#2479fd;
+	border-collapse:collapse; 
+}
+
+#bsGameOverBody {
+	background-image: url("../images/BsImages/bsSinking.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width:100%;
+	height:100%;
+}

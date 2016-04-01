@@ -1,16 +1,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page session="true" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
-
+<c:if test="${username==null || username==''}">
+	<script type="text/javascript">
+		window.location = "index.jsp"
+	</script>
+</c:if>
 
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="css/connect4.css">
+<link href="css/connect4.css" rel="stylesheet">
 <title>Connect 4</title>
 </head>
-<body id="introBody">
+
+<body id="c4introBody">
+<%@include file="header.jsp"%>
+
+
+<div id="c4introDiv">
 <form method="post" action="C4ServletStart">
 <TABLE id="c4OptionTable">
 <tr><td colspan=3><h1>Connect 4</h1></td></tr>
@@ -39,4 +48,4 @@
  </select>
 </TD></TR>
 <TR><TD colspan=3><input type="submit" value="Play" class="c4ColumnButton"></TD>
-</TABLE></form></body></html>
+</TABLE></form></div></body></html>

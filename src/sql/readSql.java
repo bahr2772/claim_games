@@ -3,36 +3,21 @@ package sql;
 import java.sql.*;
 
 public class readSql {
-	
-   // JDBC driver name and database URL
-   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://localhost/claimgames";
 
-   //  Database credentials
-   static final String SQLUSER = "claimgames";
-   static final String SQLPASS = "claimgames";
-   
-   
-   
    public void displayTable() {
-   Connection conn = null;
    Statement stmt = null;
+   Connection conn = null;
    try{
-      //STEP 2: Register JDBC driver
-      Class.forName("com.mysql.jdbc.Driver");
+	   
+	   Class.forName(DbInfo.JDBC_DRIVER);
+		conn = DriverManager.getConnection(DbInfo.DB_URL, DbInfo.SQLUSER, DbInfo.SQLPASS);
 
-      //STEP 3: Open a connection
-      System.out.println("Connecting to database...");
-      conn = DriverManager.getConnection(DB_URL,SQLUSER,SQLPASS);
-
-      //STEP 4: Execute a query
       System.out.println("Creating statement...");
       stmt = conn.createStatement();
       String sql;
       sql = "SELECT id, username, password, email FROM Users";
       ResultSet rs = stmt.executeQuery(sql);
 
-      //STEP 5: Extract data from result set
       while(rs.next()){
          //Retrieve by column name
          int id  = rs.getInt("id");
@@ -46,7 +31,6 @@ public class readSql {
          System.out.print(", Password: " + password);
          System.out.println(", Email: " + email);
       }
-      //STEP 6: Clean-up environment
       rs.close();
       stmt.close();
       conn.close();

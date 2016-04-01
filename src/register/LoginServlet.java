@@ -59,11 +59,11 @@ public class LoginServlet extends HttpServlet {
 
 		int value = check.credChecker(username, password);
 		
-		
+		System.out.println(value);
+
 		switch(value){
 
 		// user name is in DB, password correct, login
-
 		case 1:
 			
 		session.setAttribute("username", username);
@@ -73,11 +73,14 @@ public class LoginServlet extends HttpServlet {
 		// user name is in DB, password incorrect
 		case 2:
 			session.setAttribute("login", "passFail");
+			session.removeAttribute("username");
 			response.sendRedirect("login.jsp");
 			return ;
 
 			// user name not in DB
 		case 3:
+			session.removeAttribute("username");
+
 			session.setAttribute("login", "noUser");
 			response.sendRedirect("login.jsp");
 			return ;
@@ -85,6 +88,7 @@ public class LoginServlet extends HttpServlet {
 
 		}
 
+		response.sendRedirect("login.jsp");
 	}
 
 	/**

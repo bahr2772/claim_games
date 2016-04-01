@@ -1,0 +1,53 @@
+body {
+	background-image: url("./BJimages/blackjack.png");
+	width: 100%;
+	height: 100%; background-size : cover;
+	background-repeat: no-repeat;
+	color: white;
+	background-size: cover;
+}
+
+#enterAmount {
+	text-align: center;
+	padding-top: 180px;
+}
+
+#dealerCards {
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#playerCards {
+	margin-top: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#anthrRound {
+	text-align: center;
+	color: white;
+}
+
+#userInfo {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#handCount {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#betPlace {
+	text-align: center;
+	padding-top: 180px;
+}
+
+#showCardCount {
+	width: 10%;
+	margin-left: 45%;
+	margin-right: auto;
+}

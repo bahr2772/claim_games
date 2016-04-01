@@ -2,29 +2,20 @@ package register;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+import sql.DbInfo;
 import sql.writeSql;
 
 import java.sql.*;
 
 public class GetInfo {
 
-	//  Database credentials
-	static final String SQLUSER = "claimgames";
-	static final String SQLPASS = "claimgames";
-
-	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-	static final String DB_URL = "jdbc:mysql://localhost/claimgames";
-
-
 	// lost pass get from email or user name
 	public String getLostPass(String username, String email){
 
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			Connection conn = DriverManager.getConnection(DB_URL, SQLUSER, SQLPASS);
+			Class.forName(DbInfo.JDBC_DRIVER);
+			Connection conn = DriverManager.getConnection(DbInfo.DB_URL, DbInfo.SQLUSER, DbInfo.SQLPASS);
 
 			PreparedStatement st = conn.prepareStatement("SELECT * FROM Users WHERE username = ? or email = ?");
 			st.setString(1, username);
@@ -66,12 +57,11 @@ public class GetInfo {
 
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			Connection conn = DriverManager.getConnection(DB_URL, SQLUSER, SQLPASS);
-
-			PreparedStatement st = conn.prepareStatement("SELECT * FROM Users WHERE username = ? and password = ?");
+			Class.forName(DbInfo.JDBC_DRIVER);
+			Connection conn = DriverManager.getConnection(DbInfo.DB_URL, DbInfo.SQLUSER, DbInfo.SQLPASS);
+			
+			PreparedStatement st = conn.prepareStatement("SELECT * FROM Users WHERE username = ?");
 			st.setString(1, username);
-			st.setString(2, password);
 			ResultSet r1=st.executeQuery();
 
 			String user;
@@ -115,8 +105,8 @@ public class GetInfo {
 
 		try
 		{
-			Class.forName(JDBC_DRIVER);
-			Connection conn = DriverManager.getConnection(DB_URL, SQLUSER, SQLPASS);
+			Class.forName(DbInfo.JDBC_DRIVER);
+			Connection conn = DriverManager.getConnection(DbInfo.DB_URL, DbInfo.SQLUSER, DbInfo.SQLPASS);
 
 			PreparedStatement st = conn.prepareStatement("SELECT * FROM Users WHERE username = ? ");
 			st.setString(1, username);

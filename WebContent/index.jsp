@@ -9,8 +9,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <link rel="stylesheet" href="css/HangmanStyle.css">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/style.css">
 <title>Claim Games</title>
 </head>
 <body>
@@ -20,9 +21,9 @@
 		<div class=gamesContainer>
 		<table id="gamesTable">
 <tr>
-<td><a href="c4start.jsp"> <img src="http://www.johnthurlow.com/children/fun/connect-4.jpg" width=150px> </a></td>
-<td><a href="hangman.jsp"> <img src="https://lh3.ggpht.com/sXBObZWkes9iWGfeXiHT3k_N6gdDQ6T5vIbwtoMDTy6wJCMeX-N9rrmgATCtkYjQr6_R=w300" width="150px"> </a></td>
-<td><a href="StartingPoint.jsp"> <img src="./images/siteImages/blackjack-logo-300x300.png" width="150px"> </a></td>
+<td><a href="c4start.jsp"> <img src="./images/siteImages/connect-4.jpg" width=150px> </a></td>
+<td><a href="hangman.jsp"> <img src="./images/siteImages/hangmanicon.png" width="150px"> </a></td>
+<td><a href="BJStartingPoint.jsp"> <img src="./images/siteImages/blackjack-logo-300x300.png" width="150px"> </a></td>
 <td><a href="WelcomeToBattleship.jsp"> <img src="./images/siteImages/battleship_icon.png" width="150px"> </a></td>
 </tr>
 <tr>
@@ -30,10 +31,6 @@
 </table>
 	</div>
 
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

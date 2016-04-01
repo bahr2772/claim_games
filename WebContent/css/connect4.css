@@ -1,4 +1,3 @@
-@CHARSET "UTF-8";
 
 body {
 	background-image: url(../images/c4/kitchen-table.jpg);
@@ -6,7 +5,7 @@ body {
     background-repeat:   no-repeat;
     background-position: center top;
     background-attachment: fixed;
-    text-align:center;
+/*     text-align:center; */
 }
 
 #c4body1 {
@@ -15,7 +14,7 @@ body {
     background-repeat:   no-repeat;
     background-position: center top;
     background-attachment: fixed;
-    text-align:center;
+/*     text-align:center; */
 }
 
 #c4body2 {
@@ -24,7 +23,7 @@ body {
     background-repeat:   no-repeat;
     background-position: center bottom;
     background-attachment: fixed;
-    text-align:center;
+/*     text-align:center; */
 }
 
 #c4body3 {
@@ -33,17 +32,26 @@ body {
     background-repeat:   no-repeat;
     background-position: center bottom;
     background-attachment: fixed;
-    text-align:center;
+/*     text-align:center; */
 }
 
-#introBody {
+#c4introBody {
 	background-image: url(../images/c4/c4.jpg);
     background-size:     contain;            
     background-repeat:   no-repeat;
     background-position: left top;
     background-attachment: fixed;
     background-color: #f5f3f4;
-    text-align:center;
+/*     text-align:center; */
+}
+
+#c4introDiv {
+    margin-top:100px;
+   /* text-align:center;*/
+}
+
+#c4maindiv {
+	margin-top:20px;
 }
 
 #c4OptionTable {  
